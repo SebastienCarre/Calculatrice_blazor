@@ -1,16 +1,133 @@
 ﻿@page "/counter"
 
-<h1>Counter</h1>
+<h1>Calculatrice</h1>
 
-<p>Current count: @currentCount</p>
+<p> @total </p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="un">1</button>
+<button class="btn btn-2" @onclick="deux">2</button>
+<button class="btn btn-3" @onclick="trois">3</button>
+<button class="btn btn-4" @onclick="quatre">4</button>
+<button class="btn btn-5" @onclick="cinq">5</button>
+<button class="btn btn-6" @onclick="six">6</button>
+<button class="btn btn-7" @onclick="sept">7</button>
+<button class="btn btn-8" @onclick="huit">8</button>
+<button class="btn btn-9" @onclick="neuf">9</button>
+<button class="btn plus" @onclick="plus">+</button>
+<button class="btn egal" @onclick="egal">=</button>
+<button class="btn moins" @onclick="moins">-</button>
+
 
 @code {
-    private int currentCount = 0;
+    private int variableglobale = 0;
+    private int total = 0;
+    private int clique = 0;
+    private int operateur = -1;
+    Boolean addition = false;
 
-    private void IncrementCount()
+    private void egal()
     {
-        currentCount++;
+        switch (operateur)
+        {
+            case 1: total = total + variableglobale;
+                break;
+            case 2: total = total - variableglobale;
+                break;
+
+        }
+
+        addition = false;
     }
+
+    private void moins()
+    {
+        operateur = 2;
+        if (addition == false)
+        {
+            total = variableglobale;
+            variableglobale = 0;
+            addition = true;
+        }
+        else
+        {
+            total = total - variableglobale;
+            variableglobale = 0;
+        }
+    }
+
+    private void plus()
+    {
+        operateur = 1;
+        if (addition == false)
+        {
+            total = variableglobale;
+            variableglobale = 0;
+            addition = true;
+        }
+        else
+        {
+            total = total + variableglobale;
+            variableglobale = 0;
+        }
+    }
+
+    private void un()
+    {
+        int a = 1;
+        variableglobale = variableglobale * 10 + a;
+
+    }
+
+    private void deux()
+    {
+        int a = 2;
+        variableglobale = variableglobale * 10 + a;
+
+    }
+
+    private void trois()
+    {
+        int a = 3;
+        variableglobale = variableglobale * 10 + a;
+
+    }
+
+    private void quatre()
+    {
+        int a = 4;
+        variableglobale = variableglobale * 10 + a;
+    }
+
+    private void cinq()
+    {
+        int a = 5;
+        variableglobale = variableglobale * 10 + a;
+    }
+
+    private void six()
+    {
+        int a = 6;
+        variableglobale = variableglobale * 10 + a;
+    }
+
+    private void sept()
+    {
+        int a = 7;
+        variableglobale = variableglobale * 10 + a;
+    }
+
+    private void huit()
+    {
+        int a = 8;
+        variableglobale = variableglobale * 10 + a;
+    }
+
+    private void neuf()
+    {
+        int a = 9;
+        variableglobale = variableglobale * 10 + a;
+    }
+
+
+
 }

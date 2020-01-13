@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Pages\Test.razor" />
+    <Content Remove="Pages\Test.css" />
+    <Content Remove="Pages\Index.cshtml" />
+    <Content Remove="Pages\test.razor" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Pages\Index.cshtml.cs" />
+  </ItemGroup>
 </Project>

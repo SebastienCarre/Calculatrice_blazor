@@ -12,6 +12,108 @@ a, .btn-link {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+    position : relative;
+    top: 40px;
+    left : 40px;
+}
+
+.btn-2 {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+
+.btn-3 {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+
+.btn-4 {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 80px;
+    left: -80px;
+}
+
+.btn-5 {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 80px;
+    left: -80px;
+}
+
+.btn-6 {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 80px;
+    left: -80px;
+}
+
+.btn-7 {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 120px;
+    left: -200px;
+}
+
+.btn-8 {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 120px;
+    left: -200px;
+}
+
+.btn-9 {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 120px;
+    left: -200px;
+}
+
+.plus {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 120px;
+    left: -200px;
+}
+
+.egal {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 160px;
+    left: -240px;
+}
+
+.moins {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    position: relative;
+    top: 80px;
+    left: -280px;
 }
 
 app {
