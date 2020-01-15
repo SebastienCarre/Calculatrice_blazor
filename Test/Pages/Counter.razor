@@ -2,6 +2,7 @@
 
 <h1>Calculatrice</h1>
 
+<p> @calcul </p>
 <p> @total </p>
 
 <button class="btn btn-primary" @onclick="un">1</button>
@@ -18,46 +19,104 @@
 <button class="btn moins" @onclick="moins">-</button>
 
 
+
+
 @code {
     private int variableglobale = 0;
     private int total = 0;
     private int clique = 0;
     private int operateur = -1;
+    private int prec_operateur = -1;
+    private int cpt = 0;
     Boolean addition = false;
+    String calcul = "";
+    Boolean debut = true;
+    Boolean reco = true;
+
+
 
     private void egal()
     {
+        calcul = calcul + variableglobale + " = ";
         switch (operateur)
         {
-            case 1: total = total + variableglobale;
+            case 1:
+                total = total + variableglobale;
                 break;
-            case 2: total = total - variableglobale;
+            case 2:
+                total = total - variableglobale;
                 break;
 
         }
 
         addition = false;
+        debut = true;
+        variableglobale = 0;
+        reco = true;
     }
 
     private void moins()
     {
+        if(debut == true && reco == false)
+        {
+            calcul = variableglobale.ToString() + " - ";
+            debut = false;
+            total = 0;
+        }
+        else
+        {
+            calcul = calcul + variableglobale.ToString() + " - ";
+        }
+
         operateur = 2;
+        cpt++;
+
         if (addition == false)
         {
             total = variableglobale;
             variableglobale = 0;
             addition = true;
+
         }
         else
         {
-            total = total - variableglobale;
-            variableglobale = 0;
+            switch (prec_operateur)
+            {
+                case 1:
+                    total = total + variableglobale;
+                    break;
+                case 2:
+                    total = total - variableglobale;
+                    break;
+
+            }
         }
+        prec_operateur = operateur;
+
+        variableglobale = 0;
+
     }
+
 
     private void plus()
     {
+        if(debut == true && reco == false)
+        {
+            calcul = variableglobale.ToString() + " + ";
+            debut = false;
+            total = 0;
+        }
+        else
+        {
+            calcul = calcul + variableglobale.ToString() + " + ";
+        }
+
+
+
         operateur = 1;
+        cpt++;
+
+
         if (addition == false)
         {
             total = variableglobale;
@@ -66,10 +125,29 @@
         }
         else
         {
-            total = total + variableglobale;
-            variableglobale = 0;
+            switch (prec_operateur)
+            {
+                case 1:
+                    total = total + variableglobale;
+                    break;
+                case 2:
+                    total = total - variableglobale;
+                    break;
+            }
+
+
         }
+        variableglobale = 0;
+        prec_operateur = operateur;
     }
+
+
+
+
+
+
+
+
 
     private void un()
     {
@@ -82,6 +160,7 @@
     {
         int a = 2;
         variableglobale = variableglobale * 10 + a;
+
 
     }
 
